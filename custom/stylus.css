@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, .container {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  background: #F2F2F5;
+  color: #505363;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 30px;
+}
+
+header {
+  grid-row: 1 / 2;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul, .social-media {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+header ul a {
+  transition: 400ms;
+}
+
+header ul a:hover {
+  color: #6272A4;
+}
+
+main {
+  grid-row: 2 / 3;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  place-items: center;
+
+  padding: 10px;
+}
+
+.hero__description {
+  align-self: center;
+}
+
+.hero__description p {
+  max-width: 400px;
+  color: #82848c;
+}
+
+.hero__description .btn {
+  display: inline-block;
+
+  padding: 10px 20px;
+  border: 1px solid #D9D5DF;
+  border-radius: 5px;
+
+  margin-top: 20px;
+
+  text-transform: uppercase;
+  font-weight: bold;
+
+  transition: 500ms;
+}
+
+.hero__description .btn:hover {
+  background-color: #6272A4;
+  color: #fff;
+}
+
+.hero__image img {
+  width: 700px;
+}
+
+footer {
+  grid-row: 3 / 4;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-media {
+  gap: 20px;
+}
+
+.social-media path {
+  transition: 500ms;
+}
+
+.social-media a:hover path {
+  fill: #6272A4;
+}
+
+@media (max-width: 1028px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero__image img {
+    width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1E1D26;
+    color: #fff;
+  }
+
+  .social-media path {
+    fill: #fff;
+  }
+
+  .hero__image img {
+    filter: invert(1);
+  }
+
+  .hero__description .btn {
+    border: 1px solid #24232e;
+  }
+}
+
+@media (max-width: 768px) {
+  header ul {
+    display: none;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+
+  .hero__description {
+    text-align: center;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+}
